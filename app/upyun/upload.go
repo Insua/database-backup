@@ -11,6 +11,7 @@ import (
 
 
 func Upload(dir string)  {
+	fmt.Println("starting upload to upyun")
 	up := Upyun()
 	if err := up.Put(&upyun.PutObjectConfig{
 		Path:      gfile.Join(g.Cfg().GetString("backup.upyun.folder"), gtime.Now().Format("Y-m-d-H-i-s") + ".zip"),
