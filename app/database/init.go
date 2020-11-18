@@ -5,6 +5,7 @@ import (
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/os/gfile"
 	"github.com/gogf/gf/os/gtime"
+	"github.com/gogf/gf/util/gconv"
 	"os"
 )
 
@@ -26,6 +27,8 @@ func Init() (dir string, dbs []string) {
 		fmt.Println("no databases to backup")
 		os.Exit(1)
 	}
+
+	fmt.Println(gtime.New().Format("Y-m-d H:i:s") + "- " +gconv.String(len(dbs)) + " databases to backup")
 
 	time := gtime.Now().Format("Y-m-d-H-i-s")
 
