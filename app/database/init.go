@@ -28,7 +28,7 @@ func Init() (dir string, dbs []string) {
 		os.Exit(1)
 	}
 
-	fmt.Println(gtime.New().Format("Y-m-d H:i:s") + "- " +gconv.String(len(dbs)) + " databases to backup")
+	fmt.Println(gtime.Now().Format("Y-m-d H:i:s") + "- " +gconv.String(len(dbs)) + " databases to backup")
 
 	time := gtime.Now().Format("Y-m-d-H-i-s")
 
