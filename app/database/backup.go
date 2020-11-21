@@ -51,6 +51,6 @@ func table(dir, db, table string)  {
 		bin = "mysqldump"
 	}
 	file := gfile.Join(dir, table + ".sql")
-	cmd := fmt.Sprintf("%s --skip-opt -q -e --single-transaction -u%s -p%s -h %s -P %s -B %s --tables %s > %s", bin,g.Cfg().GetString("database.user"), g.Cfg().GetString("database.pass"), g.Cfg().GetString("database.host"), g.Cfg().GetString("database.port"), db, table, file)
+	cmd := fmt.Sprintf("%s -q -e --single-transaction -u%s -p%s -h %s -P %s -B %s --tables %s > %s", bin,g.Cfg().GetString("database.user"), g.Cfg().GetString("database.pass"), g.Cfg().GetString("database.host"), g.Cfg().GetString("database.port"), db, table, file)
 	gproc.ShellExec(cmd)
 }
